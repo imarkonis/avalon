@@ -18,5 +18,5 @@ lbou_events[is.na(event), event := 0]
 saveRDS(lbou_aval, './data/lbou_aval.rds')
 saveRDS(lbou_meteo, './data/lbou_meteo.rds')
 saveRDS(lbou_events, './data/lbou_events.rds')
-saveRDS(lbou_events_only, '/data/lbou_events_only.rds')
+saveRDS(lbou_events_only, './data/lbou_events_only.rds')
 
