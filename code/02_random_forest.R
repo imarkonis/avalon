@@ -13,5 +13,5 @@ events_for_rf[, T05prum := NULL]
 events_complete <- events_for_rf[complete.cases(events_for_rf)]
 events_for_rf <- events_complete[, -2]
 
-test <- randomForest(event ~., data = events_for_rf)
-varImpPlot(test)
+all_events_rf <- randomForest(event ~., data = events_for_rf)
+varImpPlot(all_events_rf)
