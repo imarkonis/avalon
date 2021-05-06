@@ -1,7 +1,7 @@
 library(data.table)
 library(randomForest)
 
-events <- readRDS('/data/lbou_events.rds')
+events <- readRDS('./data/lbou_events.rds')
 events <- events[, 2:13]
 events <- unique(events)
 
