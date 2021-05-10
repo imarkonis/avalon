@@ -8,7 +8,7 @@ library(DALEX)
 
 ###
 
-ncores <- detectCores() - 4
+ncores <- detectCores() - 1
 cs <- makeCluster(ncores)
 registerDoParallel(cs)
 
@@ -62,9 +62,9 @@ p1 <- plot(eva_rf, geom = "histogram")
 p2 <- plot(eva_rf, geom = "prc") 
 p1 + p2
 
-vip_50 <- model_parts(explainer = explain_rf, 
+vip_50 <- model_parts(explainer = explain_rf,  # too much time
                       loss_function = loss_root_mean_square,
-                      B = 1,
+                      B = 50,
                       type = "difference")
 plot(vip_50) +
   ggtitle("Mean variable importance over 50 permutations", "") 
